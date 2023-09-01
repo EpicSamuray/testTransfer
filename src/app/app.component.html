@@ -1,0 +1,12 @@
+<div class="default-theme">
+  <ng-container *ngIf="isLoading$ | async; then isLoading"></ng-container>
+  <ng-template #isLoading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+  <app-sidebar
+    (login)="login()"
+    (logoff)="logout()"
+    [loginResponse]="loginResponse$ | async"
+  ></app-sidebar>
+</div>
+<ngx-scrolltop></ngx-scrolltop>
